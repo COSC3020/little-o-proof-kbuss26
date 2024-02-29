@@ -26,7 +26,6 @@ __Proof__:<br>
 $f(n)\in o(g(n)) \implies f(n)\in O(g(n))$<br>
 $\implies (\forall c>0, \exists n_0: f(n) \leq c g(n) (\forall n\ge n_0) \implies f(n)\in O(g(n)))$ {definition of $f(n)\in o(g(n))$}<br>
 $\implies (\forall c>0, \exists n_0: f(n) \leq c g(n) (\forall n\ge n_0) \implies \exists c>0, \exists n_0 : f(n) \leq c g(n) (\forall n\ge n_0))$ {definition of $f(n)\in O(g(n))$}<br>
-$\implies (\forall c>0, \exists n_0: f(n) \leq c g(n) (\forall n\ge n_0) \implies \exists c>0, \exists n_0 : f(n) \leq c g(n) (\forall n\ge n_0))$ {definition of $f(n)\in O(g(n))$}<br>
 
 $\implies True$ {Predicate and propositional logic}<br>
 
