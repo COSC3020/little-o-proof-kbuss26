@@ -31,7 +31,7 @@ $\implies True$ {Predicate and propositional logic}<br>
 
 Q.E.D.
 
-The reason why we can say this is that the definitions differ  in $c$: Little-O must be true for all $c$, but Big-O must be true for some $c$. However, the conditions remain the same for $n$, $f(n)$, and $g(n)$ for each definition. Therefore, we can conclude with propositional reasoning that if $f(n)$ is in $o(n)$ with all $c$, it _must_ be true that $f(n)$ is in $O(n)$ as there exists a $c$ where all $c > 0$ meets the conditions in $O(n)$.
+The reason why we can say this is that the definitions differ  in $c$: Little-O must be true for all $c$, but Big-O must be true for some $c$. However, the conditions remain the same for $n$, $f(n)$, and $g(n)$ for each definition. Therefore, we can conclude with propositional reasoning that if $f(n)$ is in $o(n)$ with all $c$, it _must_ be true that $f(n)$ is in $O(n)$ as there exists a $c$ where all $c > 0$ meets the conditions in both $o(n)$ and $O(n)$.
 
 # Sources:
 - https://github.com/COSC3020/little-o-proof-egkallas - I worked with Evan Kallas with this review.
