@@ -19,19 +19,20 @@ might help with the notation for mathematical expressions.
 ### Proof
 
 __Given Definitions__: <br>
-$f(n)\in o(g(n)) \iff \forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$<br>
-$f(n)\in O(g(n)) \iff \exists c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$<br>
+$f(n)\in o(g(n)) \iff \forall c>0, \exists n_0: f(n) \leq c g(n) \forall n\ge n_0$<br>
+$f(n)\in O(g(n)) \iff \exists c>0, \exists n_0 : f(n) \leq c g(n) \forall n\ge n_0$<br>
 
 __Proof__:<br>
 $f(n)\in o(g(n)) \implies f(n)\in O(g(n))$<br>
-$\implies \forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n) \implies f(n)\in O(g(n))$ {definition of $f(n)\in o(g(n))$}<br>
-$\implies (\forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)) \implies (\exists c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n))$ {definition of $f(n)\in O(g(n))$}<br>
-$\implies (\forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)) \implies (\exists c_1>0, \exists n_2, \forall n_1\ge n_2: f(n_1) < c_1 g(n_1))$ {rename duplicate variables}
+$\implies (\forall c>0, \exists n_0: f(n) \leq c g(n) (\forall n\ge n_0) \implies f(n)\in O(g(n)))$ {definition of $f(n)\in o(g(n))$}<br>
+$\implies (\forall c>0, \exists n_0: f(n) \leq c g(n) (\forall n\ge n_0) \implies \exists c>0, \exists n_0 : f(n) \leq c g(n) (\forall n\ge n_0))$ {definition of $f(n)\in O(g(n))$}<br>
+$\implies (\forall c>0, \exists n_0: f(n) \leq c g(n) (\forall n\ge n_0) \implies \exists c>0, \exists n_0 : f(n) \leq c g(n) (\forall n\ge n_0))$ {definition of $f(n)\in O(g(n))$}<br>
 
-$\implies \forall n_0, \exists c_1>0, \exists c>0, \exists n_2, \exists n\ge n_0, \forall n_1\ge n_2: (f(n) < c_1 g(n) \implies f(n_1) < c_1 g(n_1))$ {migrate variables}<br>
-$\implies \exists n_2, \exists n\ge n_c, \forall n_1\ge n_2: (f(n) < 1 * g(n) \implies f(n_1) < 1 * g(n_1))$ {remove $n_0 = n_c, c_1 = c, c = 1$}<br>
-$\implies \forall n_1\ge n_c: (f(n_1) < g(n_1) \implies f(n_1) < g(n_1))$ {remove $n_2 = n_c, n = (n_1 | n\ge n_c$)}<br>
-$\implies (f(n_g) < g(n_g) \implies f(n_g) < g(n_g))$ {remove $n_1 = (n_g | n_g\ge n_c)$}<br>
-$\implies True$ {self-implication}<br>
+$\implies True$ {Predicate and propositional logic}<br>
 
 Q.E.D.
+
+The reason why we can say this is that the definitions differ  in $c$: Little-O must be true for all $c$, but Big-O must be true for some $c$. However, the conditions remain the same for $n$, $f(n)$, and $g(n)$ for each definition. Therefore, we can conclude with propositional reasoning that if $f(n)$ is in $o(n)$ with all $c$, it _must_ be true that $f(n)$ is in $O(n)$ as there exists a $c$ where all $c > 0$ meets the conditions in $O(n)$.
+
+# Sources:
+- https://github.com/COSC3020/little-o-proof-egkallas - I worked with Evan Kallas with this review.
