@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/wM4-KOzy)
 # Little-o
 
 In addition to the big-O, big-$\Omega$, and big-$\Theta$ notation that
@@ -15,4 +16,22 @@ markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
 
-$f(n)\in o(g(n)) \iff \forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$
+### Proof
+
+__Given Definitions__: <br>
+$f(n)\in o(g(n)) \iff \forall c>0, \exists n_0: f(n) < c g(n) \forall n\ge n_0$<br>
+$f(n)\in O(g(n)) \iff \exists c>0, \exists n_0 : f(n) \leq c g(n) \forall n\ge n_0$<br>
+
+__Proof__:<br>
+$f(n)\in o(g(n)) \implies f(n)\in O(g(n))$<br>
+$\implies (\forall c>0, \exists n_0: f(n) < c g(n) (\forall n\ge n_0) \implies f(n)\in O(g(n)))$ {definition of $f(n)\in o(g(n))$}<br>
+$\implies (\forall c>0, \exists n_0: f(n) < c g(n) (\forall n\ge n_0) \implies \exists c>0, \exists n_0 : f(n) \leq c g(n) (\forall n\ge n_0))$ {definition of $f(n)\in O(g(n))$}<br>
+
+$\implies True$ {Predicate and propositional logic}<br>
+
+Q.E.D.
+
+The reason why we can say this is that the definitions differ in $c$ and the constraint on f(n) and g(n): Little-O must be true for all $c$, but Big-O must be true for some $c$. Furthermore, $f(n) < g(n)$ in $o(n)$, whereas $f(n) \leq g(n)$ in $O(n) However, the condition remain the same for $n$ for each definition. We can conclude with propositional reasoning that if $f(n)$ is in $o(n)$ and $f(n) < g(n)$ with all $c$, it _must_ be true that $f(n)$ is in $O(n)$ as there exists a $c$ where all $c > 0$ and $f(n) \leq g(n)$. Therefore, $f(n)\in o(g(n)) \implies f(n)\in O(g(n))$.
+
+# Sources:
+- https://github.com/COSC3020/little-o-proof-egkallas - I worked with Evan Kallas with this review.
