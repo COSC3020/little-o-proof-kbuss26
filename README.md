@@ -31,7 +31,7 @@ $\implies True$ {Predicate and propositional logic}<br>
 
 Q.E.D.
 
-The reason why we can say this is that the definitions differ in $c$ and the constraint on f(n) and g(n): Little-O must be true for all $c$, but Big-O must be true for some $c$. Furthermore, $f(n) < g(n)$ in $o(n)$, whereas $f(n) \leq g(n)$ in $O(n) However, the condition remain the same for $n$ for each definition. We can conclude with propositional reasoning that if $f(n)$ is in $o(n)$ with all $c$ and $f(n) < g(n)$, it _must_ be true that $f(n)$ is in $O(n)$ as there exists a $c$ where all $c > 0$ and $f(n) \leq g(n)$. Therefore, $f(n)\in o(g(n)) \implies f(n)\in O(g(n))$.
+The reason why we can say this is that the definitions differ in $c$ and the constraint on f(n) and g(n): Little-O must be true for all $c$, but Big-O must be true for some $c$. Furthermore, $f(n) < g(n)$ in $o(n)$, whereas $f(n) \leq g(n)$ in $O(n) However, the condition remain the same for $n$ for each definition. We can conclude with propositional reasoning that if $f(n)$ is in $o(n)$ and $f(n) < g(n)$ with all $c$, it _must_ be true that $f(n)$ is in $O(n)$ as there exists a $c$ where all $c > 0$ and $f(n) \leq g(n)$. Therefore, $f(n)\in o(g(n)) \implies f(n)\in O(g(n))$.
 
 # Sources:
 - https://github.com/COSC3020/little-o-proof-egkallas - I worked with Evan Kallas with this review.
